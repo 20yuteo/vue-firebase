@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "./axios-auth";
 export default {
   data() {
     return {
@@ -28,7 +28,7 @@ export default {
     }
   },
   created() {
-    axios.get('https://firestore.googleapis.com/v1/projects/vuejs-http-6b20a/databases/(default)/documents/comments',
+    axios.get('/comments',
     ).then(response => {
       this.posts = response.data.documents
     });
